@@ -1,7 +1,7 @@
 const name = "Nishant"
 const repoCount = 50 
 
-// conole.log(name + repoCount + " Value");
+// conole.log(name + repoCount + " Value"); // don't use this method
 
 console.log(`Hello my name is ${name} and  my  repo count is ${repoCount}`);
 
