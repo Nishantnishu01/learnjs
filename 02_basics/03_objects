@@ -1,0 +1,41 @@
+//singleton
+
+// object literals
+const mysym = Symbol("key1");  
+const jsuser = {
+    name: "Nishant",
+    "full name": "Nishant Kumar",
+    [mysym]: "mykey1",
+    age: 25,
+    location: "Delhi",
+    email: "nishant.com",
+    isLoggedIn: false,
+    lastLoginDays: ["Monday", "Saturday"]
+};
+
+console.log(jsuser.email);            // nishant.com
+console.log(jsuser["full name"]);     // Nishant Kumar
+console.log(jsuser[mysym]);           // mykey1
+
+// Modify email before freezing the object
+jsuser.email = "Nishant@gmail.com";
+
+// Add greeting methods before freezing
+jsuser.greeting = function() {
+    console.log("Hello JS user");
+};
+jsuser.greetingTwo = function() {
+    console.log(`Hello JS user, ${this.name}`);
+};
+
+// Freeze the object, preventing further modifications
+Object.freeze(jsuser);
+
+// Trying to modify the email again (this will have no effect)
+jsuser.email = "Nishant@yahoo.com";  // No change due to freeze
+
+console.log(jsuser.email);  // Nishant@gmail.com
+
+// Methods will still work
+jsuser.greeting();          // Hello JS user
+jsuser.greetingTwo();       // Hello JS user, Nishant

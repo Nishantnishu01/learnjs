@@ -1,0 +1,71 @@
+// const tinderUser = new oject() // this is singleton user user 
+const tinderUser = {} //non singleton object
+tinderUser.id = "123abc";
+tinderUser.name = "aman";
+tinderUser.isLoggedIn = false;
+
+// console.log(tinderUser);
+
+const regularUser = {
+    email: "scocte@123gmail.com",
+    fullname: {
+        userfullname: {
+            firstname: "Nishant",
+            lastname: "kumar"
+        }
+    }
+};
+// console.log(regularUser.fullname);
+
+const object1 = {1: "a", 2: "b"};
+const object2 = {3: "a", 4: "b"};
+// Assuming object4 is undefined, you don't need to define it if not required
+
+// You can safely merge object1 and object2 using Object.assign
+const object3 = Object.assign({}, object1, object2);
+
+// Alternatively, merge with spread operator
+// const object3 = { ...object1, ...object2 };
+
+// console.log(object3);  // Output will be: { '1': 'a', '2': 'b', '3': 'a', '4': 'b' }
+
+// Fix array definition and access
+const users = [
+    {
+        id: 1,
+        email: "nishant@123"
+    }
+];
+
+// Access the email property
+// console.log(users[0].email);
+
+console.log(tinderUser);
+console.log(Object.keys(tinderUser));
+console.log(Object.values(tinderUser));
+console.log(Object.entries(tinderUser));
+
+// Check for the correct property name
+console.log(tinderUser.hasOwnProperty('isLoggedIn'));  // Should return true
+
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    cousrseInstructor: "Nishant"
+}
+// course.courseInstructor
+const{cousrseInstructor: instructor} = course
+
+console.log(instructor);
+
+// {
+//     "name": "Nishant"
+//     "coursename": "js in hindi"
+//     "price": "free"
+// }
+[
+    {},
+    {},
+    {}
+]
